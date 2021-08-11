@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-
-  <p>Show book</p>
+<h2>{{book.title}}</h2>
+<h3>by {{book.author.full_name()}}</h3>
+  <ul>
+    <li>Genre - {{book.genre}} </li>
+    <li>Publisher - {{book.publisher}} </li>
+  </ul>
 
 {% endblock %}
