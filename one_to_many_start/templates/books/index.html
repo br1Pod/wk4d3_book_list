@@ -3,5 +3,14 @@
 
 
 <p>All books</p>
+<ul>
+    {% for book in books %}
+        <li>Title - {{book.title}} </li>
+        <li>Author - {{book.author.full_name()}} </li>
+        <li>Genre - {{book.genre}} </li>
+        <li>Publisher - {{book.publisher}} </li>
+        <hr>
+    {% endfor %}
+</ul>
 
 {% endblock %}
