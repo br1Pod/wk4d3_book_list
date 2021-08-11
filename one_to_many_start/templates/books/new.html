@@ -1,6 +1,38 @@
 {% extends "base.html" %}
 {% block content %}
 
-<p>New book</p>
+<form action="/books" method="post">
+    <div>
+      <label for="title">title:</label>
+      <input type="text" id="title" name="title" placeholder="title" required autofocus>
+    </div>
+
+    <div>
+        <label for="author">author:</label>
+        <select id="author" name="author_id">
+          
+          {% for author in authors %}
+  
+          <option value = "{{author.id}}">{{author.full_name()}}</option>
+  
+          {% endfor %}
+  
+        </select>
+      </div>
+  
+    <div>
+      <label for="genre">genre:</label>
+      <input type="text" id="genre" name="genre" placeholder="genre" required>
+    </div>
+
+    <div>
+        <label for="publisher">publisher:</label>
+        <input type="text" id="publisher" name="publisher" placeholder="publisher" required>
+      </div>
+    
+  
+    <button type="submit">Add New Book</button>
+  
+  </form>
 
 {% endblock %}

@@ -24,7 +24,10 @@ def delete(id):
 
 
 # NEW
-
+@books_blueprint.route("/books/new", methods=["GET"])
+def add_new_book():
+    authors = author_repository.select_all()
+    return render_template("books/new.html", authors = authors)
 
 # CREATE
 
