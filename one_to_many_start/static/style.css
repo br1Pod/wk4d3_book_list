@@ -1,5 +1,10 @@
 body{
   font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+  width:100vw;
+  height:100vh;
+  background-image: url('images/library.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .book {
@@ -55,13 +60,18 @@ input, select, button {
 
 .menu{
   display: flex;
-  padding: 10px;
-  background-color: grey;
+  padding: 0;
+  background-color:rgba(20, 20, 20, 85%);
   color: white;
+  margin-bottom:40px;
+}
+.menu ul {
+   
 }
 
-.menu li a{
-  text-decoration: none;
+.menu li a:hover{
+  color:#d44;
+  text-decoration: underline;
 }
 
 .menu li a:visited{
@@ -78,8 +88,9 @@ input, select, button {
 .container{
   display: flex;
   flex-wrap: wrap;
-  width: 300px;
+  width: 90%;
   margin: 0 auto;
+  background-color:rgba(20, 20, 20, 85%);
 }
 
 #home-image {
@@ -88,4 +99,59 @@ input, select, button {
   background-image: url('images/library.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+h1 {
+  color: #fff;
+  padding:20px;
+}
+.bookbox ul li {
+  list-style-type: none;
+  border-bottom: 1px dotted #ddd;
+  color:#666;
+  font-size: 13px;
+  text-align: center;
+  
+}
+
+.bookbox ul li i {
+  margin: 5px;
+  width: 30px;
+  text-align: left;
+}
+
+.bookbox ul li a {
+  color:#d44;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.bookbox ul li a:hover {
+  color:#f66;
+  font-size: 21px;
+}
+
+.bookbox {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width:100%;
+  justify-content: space-around;
+  padding: 20px;
+
+}
+
+.bookbox ul {
+  background-color:#fff;
+  margin:0 20px 40px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+ .centered {
+  display:grid;
+  grid-template-columns: 1fr;
+  width:100%;
+  justify-content:center;
+  padding: 20px;
+  margin:50px 250px;
 }

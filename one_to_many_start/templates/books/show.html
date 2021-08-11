@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>{{book.title}}</h2>
-<h3>by {{book.author.full_name()}}</h3>
-  <ul>
-    <li>Genre - {{book.genre}} </li>
-    <li>Publisher - {{book.publisher}} </li>
-  </ul>
 
+<section class="bookbox centered">
+  <ul>
+    <li><i class="fa fa-book fa-2x" aria-hidden="true"></i> <a href="#">{{book.title}}</a></li>
+    <li><i class="fa fa-user fa-2x" aria-hidden="true"></i> {{book.author.full_name()}}</li>
+    <li><i class="fa fa-info fa-2x" aria-hidden="true"></i> {{book.genre}} </li>
+    <li><i class="fa fa-university fa-2x" aria-hidden="true"></i> {{book.publisher}} </li>
+  </ul>
+</section>
 {% endblock %}

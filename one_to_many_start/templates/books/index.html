@@ -2,13 +2,14 @@
 {% block content %}
 
 
-<p>All books</p>
-<ul>
+<h1>All Books</h1>
+<section class="bookbox">
     {% for book in books %}
-        <li>Title - <a href="/books/{{book.id}}">{{book.title}}</a> </li>
-        <li>Author - {{book.author.full_name()}} </li>
-        <li>Genre - {{book.genre}} </li>
-        <li>Publisher - {{book.publisher}} </li>
+    <ul>
+        <li><i class="fa fa-book fa-2x" aria-hidden="true"></i> <a href="/books/{{book.id}}">{{book.title}}</a> </li>
+        <li><i class="fa fa-user fa-2x" aria-hidden="true"></i> {{book.author.full_name()}} </li>
+        <li><i class="fa fa-info fa-2x" aria-hidden="true"></i> {{book.genre}} </li>
+        <li><i class="fa fa-university fa-2x" aria-hidden="true"></i> {{book.publisher}} </li>
         <li>
             <form class = "delete-form" action = "/books/{{book.id}}/delete" method="post">
                 <button class="trash-button">
@@ -16,8 +17,8 @@
                 </button>
             </form>
         </li>
-        <hr>
+    </ul>
     {% endfor %}
-</ul>
+</section>
 
 {% endblock %}
