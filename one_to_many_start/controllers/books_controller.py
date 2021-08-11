@@ -30,7 +30,17 @@ def add_new_book():
     return render_template("books/new.html", authors = authors)
 
 # CREATE
-
+@books_blueprint.route("/books", methods=["POST"])
+def save_new_book():
+    book = None
+    title = request.form['title']
+    author_id = request.form['author_id']
+    author = author_repository.select(author_id)
+    genre = request.form['genre']
+    publisher = request.form['publisher']
+    book = Book(title, genre, publisher, author)
+    book_repository.save(book)
+    return redirect("/books")
 
 # SHOW
 
